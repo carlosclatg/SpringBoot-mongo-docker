@@ -1,0 +1,26 @@
+version: "2.2"
+
+networks:
+  platform:
+    driver: bridge
+
+services:
+  reactivemicro:
+    build: SpringReactive
+    mem_limit: 500m
+    networks:
+      - platform
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - mongodbs
+    ports:
+      - "8080:8080"
+  #mongo
+  mongodbs:
+    container_name: mongodbs
+    image: mongo:3.6.9
+    mem_limit: 350m
+    networks:
+      - platform
+    command: mongod --smallfiles
