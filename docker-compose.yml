@@ -23,4 +23,6 @@ services:
     mem_limit: 350m
     networks:
       - platform
-    command: mongod --smallfiles
+    ports:
+      - 9856:9856
+    command: mongod --port 9856
