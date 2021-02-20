@@ -1,6 +1,6 @@
 # Simple SpringBoot + MongoApp
 
-This is a simple SpringBoot Rest API, that connects to MongoDB image using docker-compose
+This is a simple SpringBoot Reactive Rest API, that connects to MongoDB image using docker-compose
 
 
 ## Installation
